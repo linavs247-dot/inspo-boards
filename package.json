@@ -1,0 +1,11 @@
+{
+  "name": "inspiration-library",
+  "private": true,
+  "type": "module",
+  "description": "A personal visual inspiration library. Folders become categories.",
+  "scripts": {
+    "build": "node scripts/build-index.mjs",
+    "dev": "node scripts/build-index.mjs && node scripts/serve.mjs"
+  },
+  "engines": { "node": ">=18" }
+}

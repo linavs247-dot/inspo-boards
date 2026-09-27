@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Keeps the library out of search engines. It is still reachable by anyone with the link. -->
+  <meta name="robots" content="noindex, nofollow, noimageindex">
+  <meta name="theme-color" content="#FFFBF1">
+  <meta name="apple-mobile-web-app-title" content="Inspiration">
+  <title>My Inspo Boards</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Patrick+Hand&display=swap">
+  <link rel="stylesheet" href="styles/main.css">
+  <script type="module" src="src/main.js"></script>
+</head>
+<body>
+  <div class="shell">
+    <!-- Title and subtitle text live in src/config.js -->
+    <header class="masthead">
+      <div class="title-wrap">
+        <h1 class="title" id="title">
+          <span class="title-text"></span>
+          <svg class="swash" viewBox="0 0 300 40" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M6 26 C 60 12, 110 30, 160 20 S 250 12, 294 22" fill="none" stroke="currentColor" stroke-width="22" stroke-linecap="round"/>
+          </svg>
+        </h1>
+      </div>
+      <p class="intro" id="subtitle"></p>
+    </header>
+
+    <div class="nav-wrap" id="nav-wrap">
+      <button class="menu-btn" id="menu-btn" type="button" aria-haspopup="dialog" aria-label="Show all categories">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <span class="menu-label">Categories</span>
+      </button>
+      <nav class="nav" id="nav" aria-label="Categories"></nav>
+    </div>
+
+    <p class="count" id="count" aria-live="polite"></p>
+    <main class="gallery" id="gallery" aria-label="Images"></main>
+    <div class="status" id="status" hidden></div>
+  </div>
+
+  <dialog class="lightbox" id="lightbox" aria-label="Image viewer">
+    <div class="lb-stage">
+      <img class="lb-img" alt="" draggable="false">
+      <p class="lb-error" hidden>This image couldn't load.</p>
+    </div>
+    <button class="lb-btn lb-close" type="button" aria-label="Close viewer">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <button class="lb-btn lb-prev" type="button" aria-label="Previous image">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>
+    </button>
+    <button class="lb-btn lb-next" type="button" aria-label="Next image">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>
+    </button>
+  </dialog>
+
+  <!-- Full category list: opens from the ☰ button -->
+  <dialog class="sheet" id="sheet" aria-labelledby="sheet-title">
+    <div class="sheet-panel">
+      <div class="sheet-head">
+        <h2 class="sheet-title" id="sheet-title">Categories</h2>
+        <button class="sheet-close" type="button" aria-label="Close category list">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+      </div>
+      <input class="sheet-find" id="sheet-find" type="search" placeholder="Find a category" autocomplete="off" aria-label="Find a category" hidden>
+      <ul class="sheet-list" id="sheet-list"></ul>
+      <p class="sheet-none" id="sheet-none" hidden>No category with that name.</p>
+    </div>
+  </dialog>
+
+  <noscript>
+    <div class="status"><h2>JavaScript is off</h2><p>Turn it on to browse the library.</p></div>
+  </noscript>
+</body>
+</html>
